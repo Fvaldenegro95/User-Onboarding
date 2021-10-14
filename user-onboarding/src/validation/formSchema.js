@@ -1,6 +1,7 @@
 import * as yup from 'yup';
 import { boolean } from 'yup/lib/locale';
 
+
 const formSchema = yup.object().shape({
     username: yup
         .string()
@@ -16,7 +17,9 @@ const formSchema = yup.object().shape({
         .required('Please enter your password.')
         .min(6, 'Password must include 6 or more characters.')
         .matches(/[a-zA-Z]/, 'Password can only contain letters.'),
-    terms: yup.boolean(),
+    terms: yup
+    .boolean()
+    .oneOf([true], 'Must Accept the Terms of Service.'),
 });
 
 export default formSchema;

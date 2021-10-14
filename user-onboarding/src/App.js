@@ -19,7 +19,6 @@ const initialFormErrors = {
   username: '',
   email: '',
   password: '',
-  terms: false,
 }
 const initialUsers = []
 const initialDisabled = true
@@ -73,7 +72,7 @@ const postNewUser = newUser => {
       email: formValues.email.trim(),
       password: formValues.password.trim(),
       terms: formValues.terms
-    // ssssssss //
+
 
   }
   postNewUser(newUser)
